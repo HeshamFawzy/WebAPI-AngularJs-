@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task(WebAPI-AngularJs)", "Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs).csproj", "{BFB4899D-7374-49AB-A95D-8643A06A2EB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFB4899D-7374-49AB-A95D-8643A06A2EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB4899D-7374-49AB-A95D-8643A06A2EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB4899D-7374-49AB-A95D-8643A06A2EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB4899D-7374-49AB-A95D-8643A06A2EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F56495C-1AD2-4D19-9DAF-8D6A284087D0}
+	EndGlobalSection
+EndGlobal
