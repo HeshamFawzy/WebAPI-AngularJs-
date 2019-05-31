@@ -9,6 +9,8 @@ namespace Task_WebAPI_AngularJs_
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             // Web API configuration and services
 
             // Web API routes

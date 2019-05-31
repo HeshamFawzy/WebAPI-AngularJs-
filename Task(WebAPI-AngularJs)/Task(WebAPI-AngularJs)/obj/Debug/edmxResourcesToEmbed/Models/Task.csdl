@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TaskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Whatsapp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Resolved_Residence" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Occupation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+    <Property Name="Salesman" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Rating" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Phone_Calls" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Customers" ToRole="Phone_Calls" />
+  </EntityType>
+  <EntityType Name="Phone_Calls">
+    <Key>
+      <PropertyRef Name="Phone_Call_ID" />
+    </Key>
+    <Property Name="Phone_Call_ID" Type="Int32" Nullable="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Call_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Project" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Employee" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Was_Done" Type="Boolean" />
+    <Property Name="Call_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Was_Income" Type="Boolean" />
+    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+    <Property Name="Customer_ID" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Phone_Calls" ToRole="Customers" />
+  </EntityType>
+  <Association Name="FK__Phone_Cal__Custo__286302EC">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Phone_Calls" Type="Self.Phone_Calls" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Phone_Calls">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TaskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Phone_Calls" EntityType="Self.Phone_Calls" />
+    <AssociationSet Name="FK__Phone_Cal__Custo__286302EC" Association="Self.FK__Phone_Cal__Custo__286302EC">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Phone_Calls" EntitySet="Phone_Calls" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

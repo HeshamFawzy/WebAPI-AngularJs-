@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TaskModelStoreContainer" CdmEntityContainer="TaskEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TaskModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Address" ColumnName="Customer_Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Whatsapp" ColumnName="Whatsapp" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Customer_Code" ColumnName="Customer_Code" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Resolved_Residence" ColumnName="Resolved_Residence" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Introduced_By" ColumnName="Introduced_By" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Last_Modified_In" ColumnName="Last_Modified_In" />
+          <ScalarProperty Name="Salesman" ColumnName="Salesman" />
+          <ScalarProperty Name="Client_Source" ColumnName="Client_Source" />
+          <ScalarProperty Name="Customer_Rating" ColumnName="Customer_Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phone_Calls">
+      <EntityTypeMapping TypeName="TaskModel.Phone_Calls">
+        <MappingFragment StoreEntitySet="Phone_Calls">
+          <ScalarProperty Name="Phone_Call_ID" ColumnName="Phone_Call_ID" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Call_Address" ColumnName="Call_Address" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="Was_Done" ColumnName="Was_Done" />
+          <ScalarProperty Name="Call_Type" ColumnName="Call_Type" />
+          <ScalarProperty Name="Was_Income" ColumnName="Was_Income" />
+          <ScalarProperty Name="Introduced_By" ColumnName="Introduced_By" />
+          <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+          <ScalarProperty Name="Last_Update" ColumnName="Last_Update" />
+          <ScalarProperty Name="Last_Modified_In" ColumnName="Last_Modified_In" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

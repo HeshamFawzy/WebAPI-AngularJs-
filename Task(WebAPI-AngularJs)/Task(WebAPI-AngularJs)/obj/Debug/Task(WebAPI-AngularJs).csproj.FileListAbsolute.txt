@@ -80,3 +80,7 @@ G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs
 G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\obj\Debug\Task(WebAPI-AngularJs).csproj.CopyComplete
 G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\obj\Debug\Task(WebAPI-AngularJs).dll
 G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\obj\Debug\Task(WebAPI-AngularJs).pdb
+G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\bin\EntityFramework.dll
+G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\bin\EntityFramework.SqlServer.dll
+G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\bin\EntityFramework.xml
+G:\EgMasters\Task-WebAPI-AngularJs-\Task(WebAPI-AngularJs)\Task(WebAPI-AngularJs)\bin\EntityFramework.SqlServer.xml
