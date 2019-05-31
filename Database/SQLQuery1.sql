@@ -2,6 +2,7 @@ use Task
 
 Create Table Customers 
 (
+	Customer_ID int primary key,
 	Customer_Name varchar(255),
 	Customer_Address varchar(max),
 	Mobile varchar(20),
@@ -26,6 +27,7 @@ Create Table Customers
 
 Create Table Phone_Calls
 (
+	Phone_Call_ID int primary key,
 	Details varchar(max),
 	Call_Address varchar(max),
 	Date date,
@@ -38,4 +40,5 @@ Create Table Phone_Calls
 	Entry_Date date,
 	Last_Update varchar(255),
 	Last_Modified_In date,
+	Customer_ID int foreign key references Customers(Customer_ID)
 )
