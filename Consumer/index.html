@@ -5,10 +5,16 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../Consumer/lib/bootstrap/css/bootstrap.min.css'>
-    <script src='../Consumer/lib/angular.min.js'></script>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap-responsive.min.css">
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/js/main.js"></script>
 </head>
-<body>
-    
+<body ng-app="myApp" ng-controller="CustomersCtrl">
+  <table class="table table-responsive">
+    <tr ng-repeat="item in Customer">
+      <td>{{item.Customer_ID}}</td>
+      <td>{{item.Customer_Name}}</td>
+    </tr>
+  </table>
 </body>
 </html>
