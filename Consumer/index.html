@@ -1,83 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="apiApp">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Css/main.css">
     <link rel="stylesheet" href="/lib/fontawesome-free-5.8.2-web/css/all.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/js/main.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="CustomersCtrl">
+<body ng-controller="CustomerController">
     <ul class="nav nav-tabs" style="direction:rtl;">
-    <li class="nav-item">
-      <a class="nav-link active" href="#">الرئيسيه</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">العملاء الجدد</a>
-    </li>
+      <li class="nav-item">
+        <a class="nav-link active" ui-sref="CustomersList">الرئيسيه</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" ui-sref="NewCustomer">العملاء الجدد</a>
+      </li>
     </ul>
-    <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
-          <button type="button" class="btn btn-secondary"><i class="fas fa-file-export"></i></button>
-          <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
-          <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
-          <button type="button" class="btn btn-secondary"><i class="fas fa-search"></i></button>
-          <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
-    </div>
-  <table class="table table-responsive" dir="rtl">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">اسم العميل</th>
-        <th scope="col">عنوان العميل</th>
-        <th scope="col">الموبايل</th>
-        <th scope="col">تليفون 1</th>
-        <th scope="col">تليفون 2</th>
-        <th scope="col">واتس</th>
-        <th scope="col">الايميل</th>
-        <th scope="col">كود العميل</th>
-        <th scope="col">الجنسيه</th>
-        <th scope="col">محل الاقامه</th>
-        <th scope="col">توصيف</th>
-        <th scope="col">الوظيفه</th>
-        <th scope="col">ادخال بواسطه</th>
-        <th scope="col">تاريخ الادخال</th>
-        <th scope="col">اخر تعديل</th>
-        <th scope="col">اخر تعديل فى</th>
-        <th scope="col">رجل المبيعات</th>
-        <th scope="col">مصدر العميل</th>
-        <th scope="col">تصنيف العميل</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in Customer">
-        <td>{{item.Customer_Name}}</td>
-        <td>{{item.Customer_Address}}</td>
-        <td>{{item.Mobile}}</td>
-        <td>{{item.Phone1}}</td>
-        <td>{{item.Phone2}}</td>
-        <td>{{item.Whatsapp}}</td>
-        <td>{{item.Email}}</td>
-        <td>{{item.Customer_Code}}</td>
-        <td>{{item.Nationality}}</td>
-        <td>{{item.Resolved_Residence}}</td>
-        <td>{{item.Details}}</td>
-        <td>{{item.Occupation}}</td>
-        <td>{{item.Introduced_By}}</td>
-        <td>{{item.Entry_Date}}</td>
-        <td>{{item.Last_Update}}</td>
-        <td>{{item.Last_Modified_In}}</td>
-        <td>{{item.Salesman}}</td>
-        <td>{{item.Client_Source}}</td>
-        <td>{{item.Customer_Rating}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div ui-view="subview"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="lib/js/angular-1.7.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+  <script src="lib/js/api.js"></script>
+  <script src="lib/js/router.js"></script>
+  <script src="lib/js/CustomerController.js"></script>
 </body>
 </html>
