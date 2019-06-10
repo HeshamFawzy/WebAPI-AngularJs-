@@ -13,7 +13,9 @@ angular.module('apiApp').controller('CustomerController', function($scope, $http
     }
 
     $scope.GetCustomerById = function(){
-        $scope.Customer = CustomersService.getById({id : $stateParams.CustomerId});
+        if($stateParams.CustomerId != undefined){
+            $scope.Customer = CustomersService.getById({id : $stateParams.CustomerId});
+        }
     }
 
     $scope.UpdateCustomer = function (Customer){
