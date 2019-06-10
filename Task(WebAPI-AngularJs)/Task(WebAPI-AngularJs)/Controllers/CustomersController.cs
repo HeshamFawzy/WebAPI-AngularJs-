@@ -17,13 +17,13 @@ namespace Task_WebAPI_AngularJs_.Controllers
     {
         private TaskEntities db = new TaskEntities();
 
-        // GET: api/Customers
+        // GET: Task/Customers
         public IQueryable<Customer> GetCustomers()
         {
-            return db.Customers.Include("Phone_Calls");
+            return db.Customers;
         }
 
-        // GET: api/Customers/5
+        // GET: Task/Customers/5
         [ResponseType(typeof(Customer))]
         public async Task<IHttpActionResult> GetCustomer(int id)
         {
@@ -36,7 +36,7 @@ namespace Task_WebAPI_AngularJs_.Controllers
             return Ok(customer);
         }
 
-        // PUT: api/Customers/5
+        // PUT: Task/Customers/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutCustomer(int id, Customer customer)
         {
@@ -71,7 +71,7 @@ namespace Task_WebAPI_AngularJs_.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Customers
+        // POST: Task/Customers
         [ResponseType(typeof(Customer))]
         public async Task<IHttpActionResult> PostCustomer(Customer customer)
         {
@@ -101,7 +101,7 @@ namespace Task_WebAPI_AngularJs_.Controllers
             return CreatedAtRoute("DefaultApi", new { id = customer.Customer_ID }, customer);
         }
 
-        // DELETE: api/Customers/5
+        // DELETE: Task/Customers/5
         [ResponseType(typeof(Customer))]
         public async Task<IHttpActionResult> DeleteCustomer(int id)
         {

@@ -4,7 +4,7 @@ angular.module('apiApp').config(function ($stateProvider){
         templateUrl : 'index.html',
         controller : 'CustomerController'
     }).state("CustomersList", {
-        url : 'Customer-List',
+        url : '/Customer-List',
         views : {
             'subview' : {
                 templateUrl : "CustomersList.html",
@@ -12,7 +12,15 @@ angular.module('apiApp').config(function ($stateProvider){
             }
         }
     }).state("NewCustomer", {
-        url : 'New-Customer',
+        url : '/New-Customer',
+        views : {
+            'subview' : {
+                templateUrl : "NewCustomer.html",
+                controller : 'CustomerController'
+            }
+        }
+    }).state("EditCustomer", {
+        url : '/New-Customer/{CustomerId}',
         views : {
             'subview' : {
                 templateUrl : "NewCustomer.html",

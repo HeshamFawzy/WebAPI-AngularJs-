@@ -1,12 +1,12 @@
-<div ng-controller="myButton" class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
+<div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
     <button type="button" class="btn btn-secondary"><i class="fas fa-file-export"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
     <button type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
 </div>
-<button type="button" class="btn btn-secondary"><i class="fas fa-plus"></i> جديد</button>
-<table class="table table-responsive">
+<button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
+<table class="table table-responsive" ng-init="GetCustomers()">
     <thead class="thead-dark">
       <tr>
         <th scope="col">اسم العميل</th>
@@ -32,7 +32,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="item in Customer">
+      <tr ng-repeat="item in Customers">
         <td>{{item.Customer_Name}}</td>
         <td>{{item.Customer_Address}}</td>
         <td>{{item.Mobile}}</td>
@@ -53,7 +53,7 @@
         <td>{{item.Client_Source}}</td>
         <td>{{item.Customer_Rating}}</td>
         <td>
-          <a href="#" ng-click="edit"><i class="fas fa-edit"></i></a>
+          <a href="#" ui-sref="EditCustomer({CustomerId : item.Customer_ID})"><i class="fas fa-edit"></i></a>
           <a href="#" ng-click="deleteCustomer();"><i class="fas fa-trash-alt"></i></a>
         </td>
       </tr>

@@ -1,1 +1,1 @@
-var apiAppModule = angular.module('apiApp', ['ui.router'])
+var apiAppModule = angular.module('apiApp', ['ui.router', 'toastr', 'ngResource'])
