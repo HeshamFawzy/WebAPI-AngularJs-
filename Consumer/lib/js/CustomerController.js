@@ -13,20 +13,21 @@ angular.module('apiApp').controller('CustomerController', function($scope, $http
     }
 
     $scope.GetCustomerById = function(){
-        if($stateParams.CustomerId != undefined){
-            $scope.Customer = CustomersService.getById({id : $stateParams.CustomerId});
+        if($stateParams.id != undefined){
+            $scope.Customer = CustomersService.getById({id : $stateParams.id});
         }
     }
 
     $scope.UpdateCustomer = function (Customer){
-        CustomersService.update(Customer);
+        CustomersService.update({id : $stateParams.id},Customer);
     }
 
-    $scope.SaveCustomer = function (data){
-        CustomersService.save(data);
+    $scope.SaveCustomer = function (Customer){
+        CustomersService.save(Customer);
     }
 
-    $scope.DeleteCustomer = function(CustomerId){
-        CustomersService.remove(CustomerId);
+    $scope.DeleteCustomer = function(id){
+        CustomersService.remove(id);
     }
+
 });

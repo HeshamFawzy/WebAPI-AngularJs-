@@ -5,25 +5,25 @@
       <PropertyRef Name="Customer_ID" />
     </Key>
     <Property Name="Customer_ID" Type="Int32" Nullable="false" />
-    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Customer_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Whatsapp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Whatsapp" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
-    <Property Name="Customer_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Resolved_Residence" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Occupation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Resolved_Residence" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Occupation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Entry_Date" Type="DateTime" Precision="0" />
-    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
-    <Property Name="Salesman" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Client_Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Customer_Rating" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Salesman" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Client_Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Rating" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Phone_Calls" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Customers" ToRole="Phone_Calls" />
   </EntityType>
   <EntityType Name="Phone_Calls">
@@ -31,17 +31,17 @@
       <PropertyRef Name="Phone_Call_ID" />
     </Key>
     <Property Name="Phone_Call_ID" Type="Int32" Nullable="false" />
-    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Call_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Call_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="Project" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Employee" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Project" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Employee" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Was_Done" Type="Boolean" />
-    <Property Name="Call_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Call_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Was_Income" Type="Boolean" />
-    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Entry_Date" Type="DateTime" Precision="0" />
-    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
     <Property Name="Customer_ID" Type="Int32" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Phone_Calls" ToRole="Customers" />

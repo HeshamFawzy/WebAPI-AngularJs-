@@ -4,6 +4,10 @@
 </br>
 <form ng-init="GetCustomerById()">
         <div class="form-row" dir="rtl">
+            <div class="col-md-4 mb-3" hidden>
+                <label class="label" for="Customer_ID">ID</label>
+                <input type="text" class="form-control input" id="Customer_ID" ng-model="Customer.Customer_ID">
+            </div>
             <div class="col-md-4 mb-3">
                 <label class="label" for="Customer_Name">اسم العميل</label>
                 <input type="text" class="form-control input" id="Customer_Name" ng-model="Customer.Customer_Name">
@@ -73,8 +77,13 @@
                 <input type="text" class="form-control input" id="Customer_Rating" ng-model="Customer.Customer_Rating">
             </div>
         </div>
-        <button class="btn btn-primary button" type="submit"><i class="fas fa-save"></i> حفظ</button>
-        <button class="btn btn-secondary button">الغاء</button>
+        <div>
+            <button class="btn btn-primary button" ng-click="SaveCustomer(Customer)"><i class="fas fa-save"></i> حفظ</button>
+        </div>
+        <div>
+            <button class="btn btn-primary button" ng-click="UpdateCustomer(Customer)"><i class="fas fa-save"></i> تعديل</button>
+        </div>
+        <button class="btn btn-secondary button" ui-sref="CustomersList">الغاء</button>
 </form>
 </br>
 </br>

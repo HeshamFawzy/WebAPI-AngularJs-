@@ -9,6 +9,7 @@
 <table class="table table-responsive" ng-init="GetCustomers()">
     <thead class="thead-dark">
       <tr>
+          <th scope="col">ID</th>
         <th scope="col">اسم العميل</th>
         <th scope="col">عنوان العميل</th>
         <th scope="col">الموبايل</th>
@@ -33,6 +34,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="item in Customers">
+        <td>{{item.Customer_ID}}</td>
         <td>{{item.Customer_Name}}</td>
         <td>{{item.Customer_Address}}</td>
         <td>{{item.Mobile}}</td>
@@ -53,8 +55,8 @@
         <td>{{item.Client_Source}}</td>
         <td>{{item.Customer_Rating}}</td>
         <td>
-          <a href="#" ui-sref="EditCustomer({CustomerId : item.Customer_ID})"><i class="fas fa-edit"></i></a>
-          <a href="#" ng-click="deleteCustomer();"><i class="fas fa-trash-alt"></i></a>
+          <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
+          <a href="#" ng-click="DeleteCustomer({id : item.Customer_ID})"><i class="fas fa-trash-alt"></i></a>
         </td>
       </tr>
     </tbody>

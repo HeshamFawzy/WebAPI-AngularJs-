@@ -20,7 +20,7 @@ angular.module('apiApp').config(function ($stateProvider){
             }
         }
     }).state("EditCustomer", {
-        url : '/New-Customer/{CustomerId}',
+        url : '/New-Customer/{id}',
         views : {
             'subview' : {
                 templateUrl : "NewCustomer.html",

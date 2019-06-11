@@ -4,47 +4,47 @@
     <Key>
       <PropertyRef Name="Customer_ID" />
     </Key>
-    <Property Name="Customer_ID" Type="int" Nullable="false" />
-    <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
-    <Property Name="Customer_Address" Type="varchar(max)" />
-    <Property Name="Mobile" Type="varchar" MaxLength="20" />
-    <Property Name="Phone1" Type="varchar" MaxLength="20" />
-    <Property Name="Phone2" Type="varchar" MaxLength="20" />
-    <Property Name="Whatsapp" Type="varchar" MaxLength="20" />
+    <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Customer_Address" Type="nvarchar(max)" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="20" />
+    <Property Name="Whatsapp" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="320" />
-    <Property Name="Customer_Code" Type="varchar" MaxLength="255" />
-    <Property Name="Nationality" Type="varchar" MaxLength="255" />
-    <Property Name="Resolved_Residence" Type="varchar(max)" />
-    <Property Name="Details" Type="varchar(max)" />
-    <Property Name="Occupation" Type="varchar" MaxLength="255" />
-    <Property Name="Introduced_By" Type="varchar" MaxLength="255" />
+    <Property Name="Customer_Code" Type="nvarchar" MaxLength="255" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="255" />
+    <Property Name="Resolved_Residence" Type="nvarchar(max)" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="255" />
+    <Property Name="Introduced_By" Type="nvarchar" MaxLength="255" />
     <Property Name="Entry_Date" Type="date" />
-    <Property Name="Last_Update" Type="varchar" MaxLength="255" />
+    <Property Name="Last_Update" Type="nvarchar" MaxLength="255" />
     <Property Name="Last_Modified_In" Type="date" />
-    <Property Name="Salesman" Type="varchar" MaxLength="255" />
-    <Property Name="Client_Source" Type="varchar" MaxLength="255" />
-    <Property Name="Customer_Rating" Type="varchar" MaxLength="255" />
+    <Property Name="Salesman" Type="nvarchar" MaxLength="255" />
+    <Property Name="Client_Source" Type="nvarchar" MaxLength="255" />
+    <Property Name="Customer_Rating" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Phone_Calls">
     <Key>
       <PropertyRef Name="Phone_Call_ID" />
     </Key>
-    <Property Name="Phone_Call_ID" Type="int" Nullable="false" />
-    <Property Name="Details" Type="varchar(max)" />
-    <Property Name="Call_Address" Type="varchar(max)" />
+    <Property Name="Phone_Call_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Call_Address" Type="nvarchar(max)" />
     <Property Name="Date" Type="date" />
-    <Property Name="Project" Type="varchar" MaxLength="255" />
-    <Property Name="Employee" Type="varchar" MaxLength="255" />
+    <Property Name="Project" Type="nvarchar" MaxLength="255" />
+    <Property Name="Employee" Type="nvarchar" MaxLength="255" />
     <Property Name="Was_Done" Type="bit" />
-    <Property Name="Call_Type" Type="varchar" MaxLength="255" />
+    <Property Name="Call_Type" Type="nvarchar" MaxLength="255" />
     <Property Name="Was_Income" Type="bit" />
-    <Property Name="Introduced_By" Type="varchar" MaxLength="255" />
+    <Property Name="Introduced_By" Type="nvarchar" MaxLength="255" />
     <Property Name="Entry_Date" Type="date" />
-    <Property Name="Last_Update" Type="varchar" MaxLength="255" />
+    <Property Name="Last_Update" Type="nvarchar" MaxLength="255" />
     <Property Name="Last_Modified_In" Type="date" />
     <Property Name="Customer_ID" Type="int" />
   </EntityType>
-  <Association Name="FK__Phone_Cal__Custo__286302EC">
+  <Association Name="FK__Phone_Cal__Custo__4222D4EF">
     <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
     <End Role="Phone_Calls" Type="Self.Phone_Calls" Multiplicity="*" />
     <ReferentialConstraint>
@@ -59,7 +59,7 @@
   <EntityContainer Name="TaskModelStoreContainer">
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Phone_Calls" EntityType="Self.Phone_Calls" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Phone_Cal__Custo__286302EC" Association="Self.FK__Phone_Cal__Custo__286302EC">
+    <AssociationSet Name="FK__Phone_Cal__Custo__4222D4EF" Association="Self.FK__Phone_Cal__Custo__4222D4EF">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Phone_Calls" EntitySet="Phone_Calls" />
     </AssociationSet>
