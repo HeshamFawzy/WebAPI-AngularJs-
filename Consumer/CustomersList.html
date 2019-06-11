@@ -9,7 +9,6 @@
 <table class="table table-responsive" ng-init="GetCustomers()">
     <thead class="thead-dark">
       <tr>
-          <th scope="col">ID</th>
         <th scope="col">اسم العميل</th>
         <th scope="col">عنوان العميل</th>
         <th scope="col">الموبايل</th>
@@ -34,7 +33,6 @@
     </thead>
     <tbody>
       <tr ng-repeat="item in Customers">
-        <td>{{item.Customer_ID}}</td>
         <td>{{item.Customer_Name}}</td>
         <td>{{item.Customer_Address}}</td>
         <td>{{item.Mobile}}</td>

@@ -93,3 +93,41 @@
           <a class="nav-link active">المكالمات</a>
         </li>
 </ul>
+<table class="table table-responsive" ng-init="">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">التوصيف</th>
+            <th scope="col">عنوان المكالمه</th>
+            <th scope="col">التاريخ</th>
+            <th scope="col">المشروع</th>
+            <th scope="col">الموظف</th>
+            <th scope="col">هل تمت</th>
+            <th scope="col">نوع المكالمه</th>
+            <th scope="col">هل وارد</th>
+            <th scope="col">ادخال بواسطه</th>
+            <th scope="col">تاريخ الادخال</th>
+            <th scope="col">اخر تعديل</th>
+            <th scope="col">اخر تعديل فى</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in Customers">
+            <td>{{item.Customer_Name}}</td>
+            <td>{{item.Customer_Address}}</td>
+            <td>{{item.Mobile}}</td>
+            <td>{{item.Phone1}}</td>
+            <td>{{item.Phone2}}</td>
+            <td>{{item.Whatsapp}}</td>
+            <td>{{item.Email}}</td>
+            <td>{{item.Customer_Code}}</td>
+            <td>{{item.Nationality}}</td>
+            <td>{{item.Resolved_Residence}}</td>
+            <td>{{item.Details}}</td>
+            <td>{{item.Occupation}}</td>
+            <td>
+              <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
+              <a href="#" ng-click="DeleteCustomer({id : item.Customer_ID})"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
