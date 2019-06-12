@@ -1,11 +1,8 @@
 angular.module('apiApp').controller('Phone_CallsController', function($scope, $http, $resource, $stateParams, toastr){
     
     var PhoneCallsService = $resource("http://localhost:51840/Task/Phone_Calls", {},{
-        get : {method : "GET"},
         getById : {method : "GET", isArray: true, params : {id : '@id'}},
-        update : {method : "PUT"},
         save : {method : "POST"},
-        remove : {method : "DELETE"},
     });
 
     $scope.GetPhoneCallsById = function(){
@@ -22,8 +19,8 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $h
         }
     }
 
-    $scope.SaveCustomer = function (Customer){
-        CustomersService.save(Customer, function(response){
+    $scope.SavePhoneCall = function (Phone){
+        PhoneCallsService.save(Phone, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");
             } else if(response.$promise.$$state.status == 1) {
