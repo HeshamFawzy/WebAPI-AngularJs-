@@ -30,5 +30,4 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $h
             } 
         });
     }
-
 });
