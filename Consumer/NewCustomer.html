@@ -95,13 +95,14 @@
     <button type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
 </div>
-<button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
-</br>
+<div data-ng-controller="PopUpController">
+    <button type="button" class="btn btn-secondary" ng-click="open()"><i class="fas fa-plus"></i> جديد</button>
+</div>
 </br>
 <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active">المكالمات</a>
-        </li>
+    <li class="nav-item">
+        <a class="nav-link active">المكالمات</a>
+    </li>
 </ul>
 <div data-ng-controller="Phone_CallsController">
     <table class="table table-responsive" ng-init="GetPhoneCallsById()">
@@ -138,8 +139,4 @@
             </tr>
         </tbody>
     </table>
-</div>
-<div data-ng-controller="PopUpController">
-    <h2 class="text-center">Angularjs-Popup</h2>
-    <button ng-click="open()" class="btn btn-warning">Simple Popup</button>
 </div>
