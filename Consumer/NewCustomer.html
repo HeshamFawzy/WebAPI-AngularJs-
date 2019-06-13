@@ -85,7 +85,7 @@
 </br>
 </br>
 <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
-    <button type="button" class="btn btn-secondary"><i class="fas fa-file-export"></i></button>
+    <button type="button" class="btn btn-secondary" onclick="Export()"><i class="fas fa-file-export"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
     <button type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
@@ -101,44 +101,46 @@
     </li>
 </ul>
 <div data-ng-controller="Phone_CallsController">
-    <table class="table table-responsive" ng-init="GetPhoneCallsById()">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">التوصيف</th>
-                <th scope="col">عنوان المكالمه</th>
-                <th scope="col">التاريخ</th>
-                <th scope="col">المشروع</th>
-                <th scope="col">الموظف</th>
-                <th scope="col">هل تمت</th>
-                <th scope="col">نوع المكالمه</th>
-                <th scope="col">هل وارد</th>
-                <th scope="col">ادخال بواسطه</th>
-                <th scope="col">تاريخ الادخال</th>
-                <th scope="col">اخر تعديل</th>
-                <th scope="col">اخر تعديل فى</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in PhoneCalls">
-                <td>{{item.Details}}</td>
-                <td>{{item.Call_Address}}</td>
-                <td>{{item.Date}}</td>
-                <td>{{item.Project}}</td>
-                <td>{{item.Employee}}</td>
-                <td>
-                    <i ng-if="item.Was_Done == true" class="fas fa-check-circle"></i>
-                    <i ng-if="item.Was_Done == false" class="fas fa-times-circle"></i>
-                </td>
-                <td>{{item.Call_Type}}</td>
-                <td>
-                    <i ng-if="item.Was_Income == true" class="fas fa-check-circle"></i>
-                    <i ng-if="item.Was_Income == false" class="fas fa-times-circle"></i>
-                </td>
-                <td>{{item.Introduced_By}}</td>
-                <td>{{item.Entry_Date}}</td>
-                <td>{{item.Last_Update}}</td>
-                <td>{{item.Last_Modified_In}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="exportable">
+        <table class="table table-responsive" ng-init="GetPhoneCallsById()">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">التوصيف</th>
+                    <th scope="col">عنوان المكالمه</th>
+                    <th scope="col">التاريخ</th>
+                    <th scope="col">المشروع</th>
+                    <th scope="col">الموظف</th>
+                    <th scope="col">هل تمت</th>
+                    <th scope="col">نوع المكالمه</th>
+                    <th scope="col">هل وارد</th>
+                    <th scope="col">ادخال بواسطه</th>
+                    <th scope="col">تاريخ الادخال</th>
+                    <th scope="col">اخر تعديل</th>
+                    <th scope="col">اخر تعديل فى</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in PhoneCalls">
+                    <td>{{item.Details}}</td>
+                    <td>{{item.Call_Address}}</td>
+                    <td>{{item.Date}}</td>
+                    <td>{{item.Project}}</td>
+                    <td>{{item.Employee}}</td>
+                    <td>
+                        <i ng-if="item.Was_Done == true" class="fas fa-check-circle"></i>
+                        <i ng-if="item.Was_Done == false" class="fas fa-times-circle"></i>
+                    </td>
+                    <td>{{item.Call_Type}}</td>
+                    <td>
+                        <i ng-if="item.Was_Income == true" class="fas fa-check-circle"></i>
+                        <i ng-if="item.Was_Income == false" class="fas fa-times-circle"></i>
+                    </td>
+                    <td>{{item.Introduced_By}}</td>
+                    <td>{{item.Entry_Date}}</td>
+                    <td>{{item.Last_Update}}</td>
+                    <td>{{item.Last_Modified_In}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

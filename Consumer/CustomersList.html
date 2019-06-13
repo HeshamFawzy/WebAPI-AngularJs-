@@ -1,61 +1,63 @@
 <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
-    <button type="button" class="btn btn-secondary"><i class="fas fa-file-export"></i></button>
+    <button type="button" class="btn btn-secondary" onclick="Export()"><i class="fas fa-file-export"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
 </div>
 <button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
-<table class="table table-responsive" ng-init="GetCustomers()">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">اسم العميل</th>
-        <th scope="col">عنوان العميل</th>
-        <th scope="col">الموبايل</th>
-        <th scope="col">تليفون 1</th>
-        <th scope="col">تليفون 2</th>
-        <th scope="col">واتس</th>
-        <th scope="col">الايميل</th>
-        <th scope="col">كود العميل</th>
-        <th scope="col">الجنسيه</th>
-        <th scope="col">محل الاقامه</th>
-        <th scope="col">توصيف</th>
-        <th scope="col">الوظيفه</th>
-        <th scope="col">ادخال بواسطه</th>
-        <th scope="col">تاريخ الادخال</th>
-        <th scope="col">اخر تعديل</th>
-        <th scope="col">اخر تعديل فى</th>
-        <th scope="col">رجل المبيعات</th>
-        <th scope="col">مصدر العميل</th>
-        <th scope="col">تصنيف العميل</th>
-        <th scope="col">العمليات</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in Customers">
-        <td>{{item.Customer_Name}}</td>
-        <td>{{item.Customer_Address}}</td>
-        <td>{{item.Mobile}}</td>
-        <td>{{item.Phone1}}</td>
-        <td>{{item.Phone2}}</td>
-        <td>{{item.Whatsapp}}</td>
-        <td>{{item.Email}}</td>
-        <td>{{item.Customer_Code}}</td>
-        <td>{{item.Nationality}}</td>
-        <td>{{item.Resolved_Residence}}</td>
-        <td>{{item.Details}}</td>
-        <td>{{item.Occupation}}</td>
-        <td>{{item.Introduced_By}}</td>
-        <td>{{item.Entry_Date}}</td>
-        <td>{{item.Last_Update}}</td>
-        <td>{{item.Last_Modified_In}}</td>
-        <td>{{item.Salesman}}</td>
-        <td>{{item.Client_Source}}</td>
-        <td>{{item.Customer_Rating}}</td>
-        <td>
-          <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
-          <a href="#" ng-click="DeleteCustomer({id : item.Customer_ID})"><i class="fas fa-trash-alt"></i></a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div id="exportable">
+    <table class="table table-responsive" ng-init="GetCustomers()">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">اسم العميل</th>
+          <th scope="col">عنوان العميل</th>
+          <th scope="col">الموبايل</th>
+          <th scope="col">تليفون 1</th>
+          <th scope="col">تليفون 2</th>
+          <th scope="col">واتس</th>
+          <th scope="col">الايميل</th>
+          <th scope="col">كود العميل</th>
+          <th scope="col">الجنسيه</th>
+          <th scope="col">محل الاقامه</th>
+          <th scope="col">توصيف</th>
+          <th scope="col">الوظيفه</th>
+          <th scope="col">ادخال بواسطه</th>
+          <th scope="col">تاريخ الادخال</th>
+          <th scope="col">اخر تعديل</th>
+          <th scope="col">اخر تعديل فى</th>
+          <th scope="col">رجل المبيعات</th>
+          <th scope="col">مصدر العميل</th>
+          <th scope="col">تصنيف العميل</th>
+          <th scope="col">العمليات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in Customers">
+          <td>{{item.Customer_Name}}</td>
+          <td>{{item.Customer_Address}}</td>
+          <td>{{item.Mobile}}</td>
+          <td>{{item.Phone1}}</td>
+          <td>{{item.Phone2}}</td>
+          <td>{{item.Whatsapp}}</td>
+          <td>{{item.Email}}</td>
+          <td>{{item.Customer_Code}}</td>
+          <td>{{item.Nationality}}</td>
+          <td>{{item.Resolved_Residence}}</td>
+          <td>{{item.Details}}</td>
+          <td>{{item.Occupation}}</td>
+          <td>{{item.Introduced_By}}</td>
+          <td>{{item.Entry_Date}}</td>
+          <td>{{item.Last_Update}}</td>
+          <td>{{item.Last_Modified_In}}</td>
+          <td>{{item.Salesman}}</td>
+          <td>{{item.Client_Source}}</td>
+          <td>{{item.Customer_Rating}}</td>
+          <td>
+            <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
+            <a href="#" ng-click="DeleteCustomer({id : item.Customer_ID})"><i class="fas fa-trash-alt"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
