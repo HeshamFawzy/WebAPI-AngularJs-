@@ -19,7 +19,8 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $h
         }
     }
 
-    $scope.SavePhoneCall = function (Phone){
+    $scope.SavePhoneCall = function (Customer_ID,Phone){
+        Phone.Customer_ID = Customer_ID;
         PhoneCallsService.save(Phone, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");

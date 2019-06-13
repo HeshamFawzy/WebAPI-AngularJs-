@@ -4,7 +4,7 @@
 <div class="modal-body">
     <form>
         <div class="form-row" dir="rtl">
-            <div class="col-md-5 mb-3">
+            <div class="col-md-5 mb-3" hidden>
                 <label class="label" for="Customer_ID">ID</label>
                 <input type="text" class="form-control input" id="Customer_ID" ng-model="Customer_ID">
             </div>
@@ -45,9 +45,7 @@
         </div>
     </form>
 </div>
-<div class="modal-footer">
-    <button class="btn btn-primary button" ng-click="SavePhoneCall(Phone)"><i class="fas fa-save"></i> حفظ</button>
-</div>
-<div class="modal-footer">
-        <button class="btn btn-primary button" ng-click="close()">الغاء</button>
+<div class="modal-footer" ng-controller="Phone_CallsController">
+    <button class="btn btn-primary button" ng-click="SavePhoneCall(Customer_ID,Phone)"><i class="fas fa-save"></i> حفظ</button>
+    <button class="btn btn-primary button" ng-click="close()">الغاء</button>
 </div>

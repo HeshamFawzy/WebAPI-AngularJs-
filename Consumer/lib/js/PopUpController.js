@@ -10,7 +10,6 @@ angular.module('apiApp').controller('PopUpController',['$scope','$uibModal', fun
                 }
             }
         }).result.catch(function(res) {
-            console.log(res);
             if (!(res === 'cancel' || res === 'escape key press')) {
               throw res;
             }

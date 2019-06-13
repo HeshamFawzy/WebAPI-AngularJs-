@@ -2,6 +2,5 @@ angular.module('apiApp').controller('PopUpController2',['$scope', '$uibModalInst
         $scope.Customer_ID = Customer_Id;
         $scope.close = function () {
             $uibModalInstance.dismiss('cancel');
-            console.log(Customer_Id);
         };
 }]);
