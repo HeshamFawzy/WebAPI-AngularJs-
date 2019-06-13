@@ -4,7 +4,7 @@
 </br>
 <form ng-init="GetCustomerById()">
         <div class="form-row" dir="rtl">
-            <div class="col-md-4 mb-3" hidden>
+            <div class="col-md-4 mb-3">
                 <label class="label" for="Customer_ID">ID</label>
                 <input type="text" class="form-control input" id="Customer_ID" ng-model="Customer.Customer_ID">
             </div>
@@ -12,14 +12,10 @@
                 <label class="label" for="Customer_Name">اسم العميل</label>
                 <input type="text" class="form-control input" id="Customer_Name" ng-model="Customer.Customer_Name">
             </div>
-            <div class="col-md-4 mb-3">
-                <label class="label" for="Customer_Address">عنوان العميل</label>
+            <div class="col-md-8 mb-3">
+                <label class="label" for="Customer_Address">عنوان العميل / الحى</label>
                 <input type="text" class="form-control input" id="Customer_Address" ng-model="Customer.Customer_Address">
              </div>
-            <div class="col-md-4 mb-3">
-                <label class="label" for="validationDefault02">الحى</label>
-                <!--<input type="text" class="form-control input" id="validationDefault02">-->
-            </div>
         </div>
     <div class="form-row" dir="rtl">
             <div class="col-md-4 mb-3">
@@ -95,7 +91,7 @@
     <button type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
 </div>
-<div data-ng-controller="PopUpController">
+<div ng-controller="PopUpController">
     <button type="button" class="btn btn-secondary" ng-click="open()"><i class="fas fa-plus"></i> جديد</button>
 </div>
 </br>
@@ -108,6 +104,7 @@
     <table class="table table-responsive" ng-init="GetPhoneCallsById()">
         <thead class="thead-dark">
             <tr>
+                <th scope="col">id</th>
                 <th scope="col">التوصيف</th>
                 <th scope="col">عنوان المكالمه</th>
                 <th scope="col">التاريخ</th>
@@ -124,6 +121,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="item in PhoneCalls">
+                <td>{{item.Customer_ID}}</td>
                 <td>{{item.Details}}</td>
                 <td>{{item.Call_Address}}</td>
                 <td>{{item.Date}}</td>

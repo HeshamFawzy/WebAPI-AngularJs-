@@ -2,8 +2,52 @@
     <h3 class="modal-title">جديد</h3>
 </div>
 <div class="modal-body">
-    This is Popup example with close button.
+    <form>
+        <div class="form-row" dir="rtl">
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Customer_ID">customer id</label>
+                <input type="text" class="form-control input" id="Customer_ID" ng-model="Phone.Customer_ID">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Details">التوصيف</label>
+                <input type="text" class="form-control input" id="Details" ng-model="Phone.Details">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Call_Address">عنوان المكالمه</label>
+                <input type="text" class="form-control input" id="Call_Address" ng-model="Phone.Call_Address">
+            </div>
+        </div>
+        <div class="form-row" dir="rtl">
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Date">التاريخ</label>
+                <input type="text" class="form-control input" id="Date" ng-model="Phone.Date">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Project">المشروع</label>
+                <input type="text" class="form-control input" id="Project" ng-model="Phone.Project">
+            </div>
+        </div>
+        <div class="form-row" dir="rtl">
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Employee">الموظف</label>
+                <input type="text" class="form-control input" id="Employee" ng-model="Phone.Employee">
+            </div>
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Call_Type">نوع المكالمه</label>
+                <input type="text" class="form-control input" id="Phone1" ng-model="Phone.Call_Type">
+            </div>
+        </div>
+        <div class="form-row" dir="rtl">
+            <div class="col-md-5 mb-3">
+                <label class="label" for="Was_Done">هل تمت</label>
+                <input type="checkbox" class="form-control input" id="Employee" ng-model="Phone.Was_Done">
+            </div>
+        </div>
+    </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-warning" type="button">Cancel</button>
+    <button class="btn btn-primary button" ng-click="SavePhoneCall(Phone)"><i class="fas fa-save"></i> حفظ</button>
+</div>
+<div class="modal-footer">
+        <button class="btn btn-primary button" ng-click="close()">الغاء</button>
 </div>
