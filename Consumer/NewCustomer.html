@@ -120,7 +120,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in PhoneCalls">
+                <tr dir-paginate="item in PhoneCalls | itemsPerPage:10">
                     <td>{{item.Details}}</td>
                     <td>{{item.Call_Address}}</td>
                     <td>{{item.Date}}</td>
@@ -142,5 +142,6 @@
                 </tr>
             </tbody>
         </table>
+        <dir-pagination-controls></dir-pagination-controls>
     </div>
 </div>

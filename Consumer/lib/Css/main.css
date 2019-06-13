@@ -44,3 +44,16 @@
     direction: rtl;
     background-color: royalblue;
 }
+
+/*pagination*/
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 5px 10px;
+    margin: 0 2px;
+    text-decoration: none;
+    background-color: royalblue;
+    border: 2px solid black;
+    border-radius: 5px;
+}

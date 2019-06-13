@@ -33,7 +33,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="item in Customers">
+        <tr dir-paginate="item in Customers | itemsPerPage:10">
           <td>{{item.Customer_Name}}</td>
           <td>{{item.Customer_Address}}</td>
           <td>{{item.Mobile}}</td>
@@ -60,4 +60,5 @@
         </tr>
       </tbody>
     </table>
+    <dir-pagination-controls></dir-pagination-controls>
   </div>
