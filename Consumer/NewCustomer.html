@@ -86,7 +86,7 @@
 </br>
 <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
     <button type="button" class="btn btn-secondary" onclick="Export()"><i class="fas fa-file-export"></i></button>
-    <button type="button" class="btn btn-secondary"><i class="fas fa-print"></i></button>
+    <button ng-controller="PrintController" type="button" class="btn btn-secondary" ng-click="Print()"><i class="fas fa-print"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
     <button type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
