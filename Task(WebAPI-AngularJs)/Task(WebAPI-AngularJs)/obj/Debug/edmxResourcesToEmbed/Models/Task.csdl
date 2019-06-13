@@ -18,9 +18,9 @@
     <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Occupation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="3" />
     <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+    <Property Name="Last_Modified_In" Type="DateTime" Precision="3" />
     <Property Name="Salesman" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Client_Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Customer_Rating" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -40,9 +40,9 @@
     <Property Name="Call_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Was_Income" Type="Boolean" />
     <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+    <Property Name="Entry_Date" Type="DateTime" Precision="3" />
     <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+    <Property Name="Last_Modified_In" Type="DateTime" Precision="3" />
     <Property Name="Customer_ID" Type="Int32" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Phone_Calls" ToRole="Customers" />
   </EntityType>

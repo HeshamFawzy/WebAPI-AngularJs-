@@ -21,6 +21,7 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $r
 
     $scope.SavePhoneCall = function (Customer_ID,Phone){
         Phone.Customer_ID = Customer_ID;
+        Phone.Entry_Date =   new Date();
         PhoneCallsService.save(Phone, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");

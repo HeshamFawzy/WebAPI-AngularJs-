@@ -1,4 +1,3 @@
-use Task
 
 Create Table Customers 
 (
@@ -16,9 +15,9 @@ Create Table Customers
 	Details nvarchar(max) COLLATE Arabic_CI_AI_KS_WS,
 	Occupation nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
 	Introduced_By nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
-	Entry_Date date,
+	Entry_Date datetime,
 	Last_Update nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
-	Last_Modified_In date,
+	Last_Modified_In datetime,
 	Salesman nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
 	Client_Source nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
 	Customer_Rating nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
@@ -37,8 +36,8 @@ Create Table Phone_Calls
 	Call_Type nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
 	Was_Income bit,
 	Introduced_By nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
-	Entry_Date date,
+	Entry_Date datetime,
 	Last_Update nvarchar(255) COLLATE Arabic_CI_AI_KS_WS,
-	Last_Modified_In date,
+	Last_Modified_In datetime,
 	Customer_ID int foreign key references Customers(Customer_ID)
 )

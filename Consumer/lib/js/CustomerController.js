@@ -35,6 +35,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
     }
 
     $scope.UpdateCustomer = function (Customer){
+        Customer.Last_Modified_In =   new Date();
         CustomersService.update({id : $stateParams.id},Customer, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");
@@ -47,6 +48,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
     }
 
     $scope.SaveCustomer = function (Customer){
+        Customer.Entry_Date =  new Date();
         CustomersService.save(Customer, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");

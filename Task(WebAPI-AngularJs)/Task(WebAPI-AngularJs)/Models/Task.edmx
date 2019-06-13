@@ -23,9 +23,9 @@
           <Property Name="Details" Type="nvarchar(max)" />
           <Property Name="Occupation" Type="nvarchar" MaxLength="255" />
           <Property Name="Introduced_By" Type="nvarchar" MaxLength="255" />
-          <Property Name="Entry_Date" Type="date" />
+          <Property Name="Entry_Date" Type="datetime" />
           <Property Name="Last_Update" Type="nvarchar" MaxLength="255" />
-          <Property Name="Last_Modified_In" Type="date" />
+          <Property Name="Last_Modified_In" Type="datetime" />
           <Property Name="Salesman" Type="nvarchar" MaxLength="255" />
           <Property Name="Client_Source" Type="nvarchar" MaxLength="255" />
           <Property Name="Customer_Rating" Type="nvarchar" MaxLength="255" />
@@ -44,12 +44,12 @@
           <Property Name="Call_Type" Type="nvarchar" MaxLength="255" />
           <Property Name="Was_Income" Type="bit" />
           <Property Name="Introduced_By" Type="nvarchar" MaxLength="255" />
-          <Property Name="Entry_Date" Type="date" />
+          <Property Name="Entry_Date" Type="datetime" />
           <Property Name="Last_Update" Type="nvarchar" MaxLength="255" />
-          <Property Name="Last_Modified_In" Type="date" />
+          <Property Name="Last_Modified_In" Type="datetime" />
           <Property Name="Customer_ID" Type="int" />
         </EntityType>
-        <Association Name="FK__Phone_Cal__Custo__4222D4EF">
+        <Association Name="FK__Phone_Cal__Custo__5070F446">
           <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
           <End Role="Phone_Calls" Type="Self.Phone_Calls" Multiplicity="*" />
           <ReferentialConstraint>
@@ -64,7 +64,7 @@
         <EntityContainer Name="TaskModelStoreContainer">
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Phone_Calls" EntityType="Self.Phone_Calls" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Phone_Cal__Custo__4222D4EF" Association="Self.FK__Phone_Cal__Custo__4222D4EF">
+          <AssociationSet Name="FK__Phone_Cal__Custo__5070F446" Association="Self.FK__Phone_Cal__Custo__5070F446">
             <End Role="Customers" EntitySet="Customers" />
             <End Role="Phone_Calls" EntitySet="Phone_Calls" />
           </AssociationSet>
@@ -91,9 +91,9 @@
           <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Occupation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+          <Property Name="Entry_Date" Type="DateTime" Precision="3" />
           <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+          <Property Name="Last_Modified_In" Type="DateTime" Precision="3" />
           <Property Name="Salesman" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Client_Source" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Customer_Rating" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -113,9 +113,9 @@
           <Property Name="Call_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Was_Income" Type="Boolean" />
           <Property Name="Introduced_By" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Entry_Date" Type="DateTime" Precision="0" />
+          <Property Name="Entry_Date" Type="DateTime" Precision="3" />
           <Property Name="Last_Update" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Modified_In" Type="DateTime" Precision="0" />
+          <Property Name="Last_Modified_In" Type="DateTime" Precision="3" />
           <Property Name="Customer_ID" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Phone_Cal__Custo__286302EC" FromRole="Phone_Calls" ToRole="Customers" />
         </EntityType>
