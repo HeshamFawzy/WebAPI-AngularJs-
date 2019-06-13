@@ -1,3 +1,4 @@
+use task
 
 Create Table Customers 
 (

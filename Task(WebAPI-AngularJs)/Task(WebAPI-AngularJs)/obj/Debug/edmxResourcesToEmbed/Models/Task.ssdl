@@ -44,7 +44,7 @@
     <Property Name="Last_Modified_In" Type="datetime" />
     <Property Name="Customer_ID" Type="int" />
   </EntityType>
-  <Association Name="FK__Phone_Cal__Custo__5070F446">
+  <Association Name="FK__Phone_Cal__Custo__59FA5E80">
     <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
     <End Role="Phone_Calls" Type="Self.Phone_Calls" Multiplicity="*" />
     <ReferentialConstraint>
@@ -59,7 +59,7 @@
   <EntityContainer Name="TaskModelStoreContainer">
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Phone_Calls" EntityType="Self.Phone_Calls" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Phone_Cal__Custo__5070F446" Association="Self.FK__Phone_Cal__Custo__5070F446">
+    <AssociationSet Name="FK__Phone_Cal__Custo__59FA5E80" Association="Self.FK__Phone_Cal__Custo__59FA5E80">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Phone_Calls" EntitySet="Phone_Calls" />
     </AssociationSet>
