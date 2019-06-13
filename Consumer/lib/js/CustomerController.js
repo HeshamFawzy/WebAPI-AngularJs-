@@ -1,4 +1,4 @@
-angular.module('apiApp').controller('CustomerController', function($scope, $http, $resource, $stateParams, toastr){
+angular.module('apiApp').controller('CustomerController', function($scope, $resource, $stateParams, toastr){
     
     var CustomersService = $resource("http://localhost:51840/Task/Customers", {},{
         get : {method : "GET"},

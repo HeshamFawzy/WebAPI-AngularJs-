@@ -1,4 +1,4 @@
-angular.module('apiApp').controller('Phone_CallsController', function($scope, $http, $resource, $stateParams, toastr){
+angular.module('apiApp').controller('Phone_CallsController', function($scope, $resource, $stateParams, toastr){
     
     var PhoneCallsService = $resource("http://localhost:51840/Task/Phone_Calls", {},{
         getById : {method : "GET", isArray: true, params : {id : '@id'}},
