@@ -96,7 +96,7 @@
               </div>
           </div>
         </tr>
-        <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:1">
+        <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:10">
           <td>{{item.Customer_Name}}</td>
           <td>{{item.Customer_Address}}</td>
           <td>{{item.Mobile}}</td>
