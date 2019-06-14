@@ -32,6 +32,5 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $r
             } 
         });
     }
-
-    $scope.GetPhoneCallsById();
+    $scope.GetPhoneCallsById(); 
 });
