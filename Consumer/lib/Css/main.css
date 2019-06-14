@@ -45,6 +45,12 @@
     background-color: royalblue;
 }
 
+.Search{
+    display: none;
+    direction: rtl;
+    background-color: tan;
+
+}
 /*pagination*/
   
 .pagination a {

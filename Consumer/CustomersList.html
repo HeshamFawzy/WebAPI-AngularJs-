@@ -1,11 +1,13 @@
 <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
-    <button type="button" class="btn btn-secondary" onclick="Export()"><i class="fas fa-file-export"></i></button>
+    <button ng-controller="ExportController" type="button" class="btn btn-secondary" ng-click="Export()"><i class="fas fa-file-export"></i></button>
     <button ng-controller="PrintController" type="button" class="btn btn-secondary" ng-click="Print()"><i class="fas fa-print"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-sync-alt"></i></button>
-    <button type="button" class="btn btn-secondary"><i class="fas fa-search"></i></button>
+    <button ng-controller="SearchController" type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
     <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
 </div>
 <button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
+</br>
+</br>
   <div id="exportable">
     <table class="table table-responsive" ng-init="GetCustomers()">
       <thead class="thead-dark">
@@ -33,7 +35,68 @@
         </tr>
       </thead>
       <tbody>
-        <tr dir-paginate="item in Customers | itemsPerPage:10">
+        <tr ng-controller="SearchController">
+          <div class="form-row" dir="rtl">
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Customer_Name" ng-model="globalSearch.Customer_Name" placeholder="اسم العميل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Customer_Address" ng-model="globalSearch.Customer_Address" placeholder="عنوان العميل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Mobile" ng-model="globalSearch.Mobile" placeholder="الموبايل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Phone1" ng-model="globalSearch.Phone1" placeholder="تليفون 1">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Phone2" ng-model="globalSearch.Phone2" placeholder="تليفون 2">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Whatsapp" ng-model="globalSearch.Whatsapp" placeholder="واتس">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Email" ng-model="globalSearch.Email" placeholder="الايميل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Customer_Code" ng-model="globalSearch.Customer_Code" placeholder="كود العميل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Nationality" ng-model="globalSearch.Nationality" placeholder="الجنسيه">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Resolved_Residence" ng-model="globalSearch.Resolved_Residence" placeholder="محل الاقامه">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Details" ng-model="globalSearch.Details" placeholder="توصيف">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Occupation" ng-model="globalSearch.Occupation" placeholder="الوظيفه">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Introduced_By" ng-model="globalSearch.Introduced_By" placeholder="ادخال بواسطه">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Entry_Date" ng-model="globalSearch.Entry_Date" placeholder="تاريخ الادخال">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Last_Update" ng-model="globalSearch.Last_Update" placeholder="اخر تعديل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Last_Modified_In" ng-model="globalSearch.Last_Modified_In" placeholder="اخر تعديل فى">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Salesman" ng-model="globalSearch.Salesman" placeholder="رجل المبيعات">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Client_Source" ng-model="globalSearch.Client_Source" placeholder="مصدر العميل">
+              </div>
+              <div class="col-md-3 mb-3">
+                  <input type="text" class="form-control Search" id="Customer_Rating" ng-model="globalSearch.Customer_Rating" placeholder="تصنيف العميل">
+              </div>
+          </div>
+        </tr>
+        <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:1">
           <td>{{item.Customer_Name}}</td>
           <td>{{item.Customer_Address}}</td>
           <td>{{item.Mobile}}</td>
