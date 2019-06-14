@@ -71,6 +71,4 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
             } 
         });
     }
-
-    $scope.GetCustomers();
 });

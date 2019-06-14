@@ -16,7 +16,6 @@ angular.module('apiApp').config(function ($stateProvider){
         views : {
             'subview' : {
                 templateUrl : "NewCustomer.html",
-                controller : 'CustomerController'
             }
         }
     }).state("EditCustomer", {
