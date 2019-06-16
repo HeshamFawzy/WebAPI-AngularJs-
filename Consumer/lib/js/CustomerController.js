@@ -72,6 +72,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
         }), 10000);
     }
 
+    //Setting Menu For Customer
     $scope.Customer_NameCheck = true;
     $scope.Customer_AddressCheck = true;
     $scope.MobileCheck = true;
@@ -92,7 +93,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
     $scope.Client_SourceCheck = true;
     $scope.Customer_RatingCheck = true;
 
-
+    //Setting Menu For PhoneCalls
     $scope.PhoneDetailsCheck = true;
     $scope.Call_AddressCheck = true;
     $scope.DateCheck = true;
