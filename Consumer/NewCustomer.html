@@ -1,6 +1,4 @@
-<head>
-    <link rel="stylesheet" href="/lib/Css/main.css">
-</head>
+<!--form for adding new customer-->
 </br>
 <form ng-init="GetCustomerById()">
         <div class="form-row" dir="rtl">
@@ -85,6 +83,7 @@
 </br>
 </br>
 <div ng-show="Customer.Customer_ID != null">
+    <!--tolls for PhoneCalls-->
     <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
         <button ng-controller="ExportController" type="button" class="btn btn-secondary" ng-click="Export()"><i class="fas fa-file-export"></i></button>
         <button ng-controller="PrintController" type="button" class="btn btn-secondary" ng-click="Print()"><i class="fas fa-print"></i></button>
@@ -109,6 +108,7 @@
               </ul>
         </button>
     </div>
+    <!--buttom for new phonecall-->
     <div ng-controller="PopUpController">
         <button type="button" class="btn btn-secondary" ng-click="open(Customer.Customer_ID)"><i class="fas fa-plus"></i> جديد</button>
     </div>
@@ -118,6 +118,7 @@
             <a class="nav-link active">المكالمات</a>
         </li>
     </ul>
+    <!--table for phonecalls-->
     <div ng-controller="Phone_CallsController">
         <div id="exportable">
             <table class="table table-responsive">
@@ -138,46 +139,48 @@
                     </tr>
                 </thead>
                 <tbody>
-                        <tr ng-controller="SearchController">
-                                <div class="form-row" dir="rtl">
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Details" ng-model="globalSearch.Details" placeholder="التوصيف">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Call_Address" ng-model="globalSearch.Call_Address" placeholder="عنوان المكالمه">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Date" ng-model="globalSearch.Date" placeholder="التاريخ">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Project" ng-model="globalSearch.Project" placeholder="المشروع">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Employee" ng-model="globalSearch.Employee" placeholder="الموظف">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Was_Done" ng-model="globalSearch.Was_Done" placeholder="هل تمت">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                            <input type="text" class="form-control Search" id="Call_Type" ng-model="globalSearch.Call_Type" placeholder="نوع المكالمه">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Was_Income" ng-model="globalSearch.Was_Income" placeholder="هل وارد">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Introduced_By" ng-model="globalSearch.Introduced_By" placeholder="ادخال بواسطه">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Entry_Date" ng-model="globalSearch.Entry_Date" placeholder="تاريخ الادخال">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Last_Update" ng-model="globalSearch.Last_Update" placeholder="اخر تعديل ">
-                                    </div>
-                                    <div class="col-md-3 mb-3">
-                                        <input type="text" class="form-control Search" id="Last_Modified_In" ng-model="globalSearch.Last_Modified_In" placeholder="اخر تعديل فى">
-                                    </div>
-                                </div>
-                            </tr>
+                    <!--search tool for phonecalls-->
+                    <tr ng-controller="SearchController">
+                        <div class="form-row" dir="rtl">
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Details" ng-model="globalSearch.Details" placeholder="التوصيف">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Call_Address" ng-model="globalSearch.Call_Address" placeholder="عنوان المكالمه">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Date" ng-model="globalSearch.Date" placeholder="التاريخ">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Project" ng-model="globalSearch.Project" placeholder="المشروع">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Employee" ng-model="globalSearch.Employee" placeholder="الموظف">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Was_Done" ng-model="globalSearch.Was_Done" placeholder="هل تمت">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Call_Type" ng-model="globalSearch.Call_Type" placeholder="نوع المكالمه">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Was_Income" ng-model="globalSearch.Was_Income" placeholder="هل وارد">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Introduced_By" ng-model="globalSearch.Introduced_By" placeholder="ادخال بواسطه">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Entry_Date" ng-model="globalSearch.Entry_Date" placeholder="تاريخ الادخال">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Last_Update" ng-model="globalSearch.Last_Update" placeholder="اخر تعديل ">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control Search" id="Last_Modified_In" ng-model="globalSearch.Last_Modified_In" placeholder="اخر تعديل فى">
+                            </div>
+                        </div>
+                    </tr>
+                    <!--phonecalls data-->
                     <tr dir-paginate="item in PhoneCalls | filter:globalSearch | itemsPerPage:10">
                         <td ng-show="PhoneDetailsCheck">{{item.Details}}</td>
                         <td ng-show="Call_AddressCheck">{{item.Call_Address}}</td>

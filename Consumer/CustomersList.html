@@ -1,3 +1,4 @@
+<!--tools for customers-->
 <div class="btn-group" role="group" aria-label="Basic example" style="direction:rtl;float:right;padding:5px;margin:0 32px 0 0;">
     <button ng-controller="ExportController" type="button" class="btn btn-secondary" ng-click="Export()"><i class="fas fa-file-export"></i></button>
     <button ng-controller="PrintController" type="button" class="btn btn-secondary" ng-click="Print()"><i class="fas fa-print"></i></button>
@@ -26,9 +27,11 @@
             <li><label class="checkbox">تصنيف العميل</label><input type="checkbox" class="SelectBox" id="Customer_RatingCheck" name="Customer_RatingCheck" ng-model="Customer_RatingCheck"></li>
           </ul>
 </div>
+<!--new button-->
 <button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
 </br>
 </br>
+<!--table for customers-->
   <div id="exportable">
     <table class="table table-responsive table-hover" ng-init="GetCustomers()">
       <thead class="thead-dark">
@@ -56,6 +59,7 @@
         </tr>
       </thead>
       <tbody>
+          <!--search tool for customers-->
         <tr ng-controller="SearchController">
           <div class="form-row" dir="rtl">
               <div class="col-md-3 mb-3">
@@ -117,6 +121,7 @@
               </div>
           </div>
         </tr>
+        <!--customers data-->
         <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:10">
           <td ng-show="Customer_NameCheck">{{item.Customer_Name}}</td>
           <td ng-show="Customer_AddressCheck">{{item.Customer_Address}}</td>
