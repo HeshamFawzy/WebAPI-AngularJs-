@@ -105,13 +105,13 @@ namespace Task_WebAPI_AngularJs_.Controllers
         [ResponseType(typeof(Phone_Calls))]
         public async Task<IHttpActionResult> DeletePhone_Calls(int id)
         {
-            Phone_Calls phone_Calls = await db.Phone_Calls.FindAsync(id);
+            List<Phone_Calls> phone_Calls = await db.Phone_Calls.Where(x => x.Customer_ID == id).ToListAsync();
             if (phone_Calls == null)
             {
                 return NotFound();
             }
 
-            db.Phone_Calls.Remove(phone_Calls);
+            db.Phone_Calls.RemoveRange(phone_Calls);
             await db.SaveChangesAsync();
 
             return Ok(phone_Calls);

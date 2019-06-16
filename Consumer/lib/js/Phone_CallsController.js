@@ -3,6 +3,7 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $r
     var PhoneCallsService = $resource("http://localhost:51840/Task/Phone_Calls", {},{
         getById : {method : "GET", isArray: true, params : {id : '@id'}},
         save : {method : "POST"},
+        remove : {method : "DELETE", isArray: true }
     });
 
     $scope.GetPhoneCallsById = function(){
@@ -32,5 +33,18 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $r
             } 
         });
     }
+
+    $scope.DeletePhoneCalls = function(id){
+        PhoneCallsService.remove(id, function(response){
+            if(response.$promise.$$state.status == 0){
+                toastr.warning("Warning");
+            } else if(response.$promise.$$state.status == 1) {
+                toastr.success("Get Deleted Successfully");
+            } else {
+                toastr.error("Error While Deleting Data");
+            } 
+        });
+    }
+
     $scope.GetPhoneCallsById(); 
 });

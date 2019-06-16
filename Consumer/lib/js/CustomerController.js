@@ -1,4 +1,4 @@
-angular.module('apiApp').controller('CustomerController', function($scope, $resource, $stateParams, toastr){
+angular.module('apiApp').controller('CustomerController', function($scope, $resource, $stateParams, toastr, $timeout){
     
     var CustomersService = $resource("http://localhost:51840/Task/Customers", {},{
         get : {method : "GET"},
@@ -61,7 +61,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
     }
 
     $scope.DeleteCustomer = function(id){
-        CustomersService.remove(id, function(response){
+        $timeout(CustomersService.remove(id, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");
             } else if(response.$promise.$$state.status == 1) {
@@ -69,6 +69,6 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
             } else {
                 toastr.error("Error While Deleting Data");
             } 
-        });
+        }), 10000);
     }
 });
