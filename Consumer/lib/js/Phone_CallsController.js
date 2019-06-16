@@ -23,15 +23,19 @@ angular.module('apiApp').controller('Phone_CallsController', function($scope, $r
     $scope.SavePhoneCall = function (Customer_ID,Phone){
         Phone.Customer_ID = Customer_ID;
         Phone.Entry_Date =   new Date();
-        PhoneCallsService.save(Phone, function(response){
-            if(response.$promise.$$state.status == 0){
-                toastr.warning("Warning");
-            } else if(response.$promise.$$state.status == 1) {
-                toastr.success("Get Added Successfully");
-            } else {
-                toastr.error("Error While Adding Data");
-            } 
-        });
+        if(Phone.Customer_ID != null){
+            PhoneCallsService.save(Phone, function(response){
+                if(response.$promise.$$state.status == 0){
+                    toastr.warning("Warning");
+                } else if(response.$promise.$$state.status == 1) {
+                    toastr.success("Get Added Successfully");
+                } else {
+                    toastr.error("Error While Adding Data");
+                } 
+            })
+        } else {
+            toastr.error("Error While Adding Data");
+        }
     }
 
     $scope.DeletePhoneCalls = function(id){
