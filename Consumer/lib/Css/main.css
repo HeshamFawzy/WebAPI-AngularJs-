@@ -45,12 +45,16 @@
     background-color: royalblue;
 }
 
+/*search*/
+
 .Search{
     display: none;
     direction: rtl;
     background-color: tan;
 
 }
+
+
 /*pagination*/
   
 .pagination a {
