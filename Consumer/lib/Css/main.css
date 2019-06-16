@@ -20,6 +20,15 @@
     margin: 10px;
 }
 
+/*Select*/
+
+.dropdown-menu {
+    width: 150px;
+}
+
+.SelectBox {
+    margin: 0 12px;
+}
 /*PopUp*/
 
 .fade.in {

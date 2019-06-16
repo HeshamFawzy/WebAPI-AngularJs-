@@ -92,7 +92,22 @@
             <button ng-controller="ReloadController" type="button" class="btn btn-secondary" ng-click="Reload('PhoneCalls')"><i class="fas fa-sync-alt"></i></button>
         </div>
         <button ng-controller="SearchController" type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
-        <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i></button>
+        <button type="button" class="btn btn-secondary" data-toggle="dropdown" class="dropdown-toggle"><i class="fas fa-cog"></i><b class="caret"></b></button>
+            <ul class="dropdown-menu">
+                <li><label class="checkbox">التوصيف</label><input type="checkbox" class="SelectBox" id="PhoneDetailsCheck" name="PhoneDetailsCheck" ng-model="PhoneDetailsCheck"></li>
+                <li><label class="checkbox">عنوان المكالمه</label><input type="checkbox" class="SelectBox" id="Call_AddressCheck" name="Call_AddressCheck" ng-model="Call_AddressCheck"></li>
+                <li><label class="checkbox">التاريخ</label><input type="checkbox" class="SelectBox" id="DateCheck" name="DateCheck" ng-model="DateCheck"></li>
+                <li><label class="checkbox">المشروع</label><input type="checkbox" class="SelectBox" id="ProjectCheck" name="ProjectCheck" ng-model="ProjectCheck"></li>
+                <li><label class="checkbox">الموظف</label><input type="checkbox" class="SelectBox" id="EmployeeCheck" name="EmployeeCheck" ng-model="EmployeeCheck"></li>
+                <li><label class="checkbox">هل تمت</label><input type="checkbox" class="SelectBox" id="Was_DoneCheck" name="Was_DoneCheck" ng-model="Was_DoneCheck"></li>
+                <li><label class="checkbox">نوع المكالمه</label><input type="checkbox" class="SelectBox" id="Call_TypeCheck" name="Call_TypeCheck" ng-model="Call_TypeCheck"></li>
+                <li><label class="checkbox">هل وارد</label><input type="checkbox" class="SelectBox" id="Was_IncomeCheck" name="Was_IncomeCheck" ng-model="Was_IncomeCheck"></li>
+                <li><label class="checkbox">ادخال بواسطه</label><input type="checkbox" class="SelectBox" id="PhoneIntroduced_ByCheck" name="PhoneIntroduced_ByCheck" ng-model="PhoneIntroduced_ByCheck"></li>
+                <li><label class="checkbox">تاريخ الادخال</label><input type="checkbox" class="SelectBox" id="PhoneEntry_DateCheck" name="PhoneEntry_DateCheck" ng-model="PhoneEntry_DateCheck"></li>
+                <li><label class="checkbox">اخر تعديل</label><input type="checkbox" class="SelectBox" id="PhoneLast_UpdateCheck" name="PhoneLast_UpdateCheck" ng-model="PhoneLast_UpdateCheck"></li>
+                <li><label class="checkbox">اخر تعديل فى</label><input type="checkbox" class="SelectBox" id="PhoneLast_Modified_InCheck" name="PhoneLast_Modified_InCheck" ng-model="PhoneLast_Modified_InCheck"></li>
+              </ul>
+        </button>
     </div>
     <div ng-controller="PopUpController">
         <button type="button" class="btn btn-secondary" ng-click="open(Customer.Customer_ID)"><i class="fas fa-plus"></i> جديد</button>
@@ -108,18 +123,18 @@
             <table class="table table-responsive">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">التوصيف</th>
-                        <th scope="col">عنوان المكالمه</th>
-                        <th scope="col">التاريخ</th>
-                        <th scope="col">المشروع</th>
-                        <th scope="col">الموظف</th>
-                        <th scope="col">هل تمت</th>
-                        <th scope="col">نوع المكالمه</th>
-                        <th scope="col">هل وارد</th>
-                        <th scope="col">ادخال بواسطه</th>
-                        <th scope="col">تاريخ الادخال</th>
-                        <th scope="col">اخر تعديل</th>
-                        <th scope="col">اخر تعديل فى</th>
+                        <th scope="col" ng-show="PhoneDetailsCheck">التوصيف</th>
+                        <th scope="col" ng-show="Call_AddressCheck">عنوان المكالمه</th>
+                        <th scope="col" ng-show="DateCheck">التاريخ</th>
+                        <th scope="col" ng-show="ProjectCheck">المشروع</th>
+                        <th scope="col" ng-show="EmployeeCheck">الموظف</th>
+                        <th scope="col" ng-show="Was_DoneCheck">هل تمت</th>
+                        <th scope="col" ng-show="Call_TypeCheck">نوع المكالمه</th>
+                        <th scope="col" ng-show="Was_IncomeCheck">هل وارد</th>
+                        <th scope="col" ng-show="PhoneIntroduced_ByCheck">ادخال بواسطه</th>
+                        <th scope="col" ng-show="PhoneEntry_DateCheck">تاريخ الادخال</th>
+                        <th scope="col" ng-show="PhoneLast_UpdateCheck">اخر تعديل</th>
+                        <th scope="col" ng-show="PhoneLast_Modified_InCheck">اخر تعديل فى</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -164,24 +179,24 @@
                                 </div>
                             </tr>
                     <tr dir-paginate="item in PhoneCalls | filter:globalSearch | itemsPerPage:10">
-                        <td>{{item.Details}}</td>
-                        <td>{{item.Call_Address}}</td>
-                        <td>{{item.Date}}</td>
-                        <td>{{item.Project}}</td>
-                        <td>{{item.Employee}}</td>
-                        <td>
+                        <td ng-show="PhoneDetailsCheck">{{item.Details}}</td>
+                        <td ng-show="Call_AddressCheck">{{item.Call_Address}}</td>
+                        <td ng-show="DateCheck">{{item.Date}}</td>
+                        <td ng-show="ProjectCheck">{{item.Project}}</td>
+                        <td ng-show="EmployeeCheck">{{item.Employee}}</td>
+                        <td ng-show="Was_DoneCheck">
                             <i ng-if="item.Was_Done == true" class="fas fa-check-circle"></i>
                             <i ng-if="item.Was_Done == false" class="fas fa-times-circle"></i>
                         </td>
-                        <td>{{item.Call_Type}}</td>
-                        <td>
+                        <td ng-show="Call_TypeCheck">{{item.Call_Type}}</td>
+                        <td ng-show="Was_IncomeCheck">
                             <i ng-if="item.Was_Income == true" class="fas fa-check-circle"></i>
                             <i ng-if="item.Was_Income == false" class="fas fa-times-circle"></i>
                         </td>
-                        <td>{{item.Introduced_By}}</td>
-                        <td>{{item.Entry_Date}}</td>
-                        <td>{{item.Last_Update}}</td>
-                        <td>{{item.Last_Modified_In}}</td>
+                        <td ng-show="PhoneIntroduced_ByCheck">{{item.Introduced_By}}</td>
+                        <td ng-show="PhoneEntry_DateCheck">{{item.Entry_Date}}</td>
+                        <td ng-show="PhoneLast_UpdateCheck">{{item.Last_Update}}</td>
+                        <td ng-show="PhoneLast_Modified_InCheck">{{item.Last_Modified_In}}</td>
                     </tr>
                 </tbody>
             </table>

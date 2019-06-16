@@ -3,34 +3,55 @@
     <button ng-controller="PrintController" type="button" class="btn btn-secondary" ng-click="Print()"><i class="fas fa-print"></i></button>
     <button ng-controller="ReloadController" type="button" class="btn btn-secondary" ng-click="Reload('Customers')"><i class="fas fa-sync-alt"></i></button>
     <button ng-controller="SearchController" type="button" class="btn btn-secondary" ng-click="Search()"><i class="fas fa-search"></i></button>
-    <button ng-controller="MenuController" type="button" class="btn btn-secondary" ng-click="open()"><i class="fas fa-cog"></i></button>
+    <button type="button" class="btn btn-secondary" data-toggle="dropdown" class="dropdown-toggle"><i class="fas fa-cog"></i><b class="caret"></b></button>
+          <ul class="dropdown-menu">
+            <li><label class="checkbox">اسم العميل</label><input type="checkbox" class="SelectBox" id="Customer_NameCheck" name="Customer_NameCheck" ng-model="Customer_NameCheck"></li>
+            <li><label class="checkbox">عنوان العميل</label><input type="checkbox" class="SelectBox" id="Customer_AddressCheck" name="Customer_AddressCheck" ng-model="Customer_AddressCheck"></li>
+            <li><label class="checkbox">الموبايل</label><input type="checkbox" class="SelectBox" id="MobileCheck" name="MobileCheck" ng-model="MobileCheck"></li>
+            <li><label class="checkbox">تليفون 1</label><input type="checkbox" class="SelectBox" id="Phone1Check" name="Phone1Check" ng-model="Phone1Check"></li>
+            <li><label class="checkbox">تليفون 2</label><input type="checkbox" class="SelectBox" id="Phone2Check" name="Phone2Check" ng-model="Phone2Check"></li>
+            <li><label class="checkbox">واتس</label><input type="checkbox" class="SelectBox" id="WhatsappCheck" name="WhatsappCheck" ng-model="WhatsappCheck"></li>
+            <li><label class="checkbox">الايميل</label><input type="checkbox" class="SelectBox" id="EmailCheck" name="EmailCheck" ng-model="EmailCheck"></li>
+            <li><label class="checkbox">كود العميل</label><input type="checkbox" class="SelectBox" id="Customer_CodeCheck" name="Customer_CodeCheck" ng-model="Customer_CodeCheck"></li>
+            <li><label class="checkbox">الجنسيه</label><input type="checkbox" class="SelectBox" id="NationalityCheck" name="NationalityCheck" ng-model="NationalityCheck"></li>
+            <li><label class="checkbox">محل الاقامه</label><input type="checkbox" class="SelectBox" id="Resolved_ResidenceCheck" name="Resolved_ResidenceCheck" ng-model="Resolved_ResidenceCheck"></li>
+            <li><label class="checkbox">توصيف</label><input type="checkbox" class="SelectBox" id="DetailsCheck" name="DetailsCheck" ng-model="DetailsCheck"></li>
+            <li><label class="checkbox">الوظيفه</label><input type="checkbox" class="SelectBox" id="OccupationCheck" name="OccupationCheck" ng-model="OccupationCheck"></li>
+            <li><label class="checkbox">ادخال بواسطه</label><input type="checkbox" class="SelectBox" id="Introduced_ByCheck" name="Introduced_ByCheck" ng-model="Introduced_ByCheck"></li>
+            <li><label class="checkbox">تاريخ الادخال</label><input type="checkbox" class="SelectBox" id="Entry_DateCheck" name="Entry_DateCheck" ng-model="Entry_DateCheck"></li>
+            <li><label class="checkbox">اخر تعديل</label><input type="checkbox" class="SelectBox" id="Last_UpdateCheck" name="Last_UpdateCheck" ng-model="Last_UpdateCheck"></li>
+            <li><label class="checkbox">اخر تعديل فى</label><input type="checkbox" class="SelectBox" id="Last_Modified_InCheck" name="Last_Modified_InCheck" ng-model="Last_Modified_InCheck"></li>
+            <li><label class="checkbox">رجل المبيعات</label><input type="checkbox" class="SelectBox" id="SalesmanCheck" name="SalesmanCheck" ng-model="SalesmanCheck"></li>
+            <li><label class="checkbox">مصدر العميل</label><input type="checkbox" class="SelectBox" id="Client_SourceCheck" name="Client_SourceCheck" ng-model="Client_SourceCheck"></li>
+            <li><label class="checkbox">تصنيف العميل</label><input type="checkbox" class="SelectBox" id="Customer_RatingCheck" name="Customer_RatingCheck" ng-model="Customer_RatingCheck"></li>
+          </ul>
 </div>
 <button type="button" class="btn btn-secondary"  ui-sref="NewCustomer"><i class="fas fa-plus"></i> جديد</button>
 </br>
 </br>
   <div id="exportable">
-    <table class="table table-responsive" ng-init="GetCustomers()">
+    <table class="table table-responsive table-hover" ng-init="GetCustomers()">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">اسم العميل</th>
-          <th scope="col">عنوان العميل</th>
-          <th scope="col">الموبايل</th>
-          <th scope="col">تليفون 1</th>
-          <th scope="col">تليفون 2</th>
-          <th scope="col">واتس</th>
-          <th scope="col">الايميل</th>
-          <th scope="col">كود العميل</th>
-          <th scope="col">الجنسيه</th>
-          <th scope="col">محل الاقامه</th>
-          <th scope="col">توصيف</th>
-          <th scope="col">الوظيفه</th>
-          <th scope="col">ادخال بواسطه</th>
-          <th scope="col">تاريخ الادخال</th>
-          <th scope="col">اخر تعديل</th>
-          <th scope="col">اخر تعديل فى</th>
-          <th scope="col">رجل المبيعات</th>
-          <th scope="col">مصدر العميل</th>
-          <th scope="col">تصنيف العميل</th>
+          <th scope="col" ng-show="Customer_NameCheck">اسم العميل</th>
+          <th scope="col" ng-show="Customer_AddressCheck">عنوان العميل</th>
+          <th scope="col" ng-show="MobileCheck">الموبايل</th>
+          <th scope="col" ng-show="Phone1Check">تليفون 1</th>
+          <th scope="col" ng-show="Phone2Check">تليفون 2</th>
+          <th scope="col" ng-show="WhatsappCheck">واتس</th>
+          <th scope="col" ng-show="EmailCheck">الايميل</th>
+          <th scope="col" ng-show="Customer_CodeCheck">كود العميل</th>
+          <th scope="col" ng-show="NationalityCheck">الجنسيه</th>
+          <th scope="col" ng-show="Resolved_ResidenceCheck">محل الاقامه</th>
+          <th scope="col" ng-show="DetailsCheck">توصيف</th>
+          <th scope="col" ng-show="OccupationCheck">الوظيفه</th>
+          <th scope="col" ng-show="Introduced_ByCheck">ادخال بواسطه</th>
+          <th scope="col" ng-show="Entry_DateCheck">تاريخ الادخال</th>
+          <th scope="col" ng-show="Last_UpdateCheck">اخر تعديل</th>
+          <th scope="col" ng-show="Last_Modified_InCheck">اخر تعديل فى</th>
+          <th scope="col" ng-show="SalesmanCheck">رجل المبيعات</th>
+          <th scope="col" ng-show="Client_SourceCheck">مصدر العميل</th>
+          <th scope="col" ng-show="Customer_RatingCheck">تصنيف العميل</th>
           <th scope="col">العمليات</th>
         </tr>
       </thead>
@@ -97,25 +118,25 @@
           </div>
         </tr>
         <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:10">
-          <td>{{item.Customer_Name}}</td>
-          <td>{{item.Customer_Address}}</td>
-          <td>{{item.Mobile}}</td>
-          <td>{{item.Phone1}}</td>
-          <td>{{item.Phone2}}</td>
-          <td>{{item.Whatsapp}}</td>
-          <td>{{item.Email}}</td>
-          <td>{{item.Customer_Code}}</td>
-          <td>{{item.Nationality}}</td>
-          <td>{{item.Resolved_Residence}}</td>
-          <td>{{item.Details}}</td>
-          <td>{{item.Occupation}}</td>
-          <td>{{item.Introduced_By}}</td>
-          <td>{{item.Entry_Date}}</td>
-          <td>{{item.Last_Update}}</td>
-          <td>{{item.Last_Modified_In}}</td>
-          <td>{{item.Salesman}}</td>
-          <td>{{item.Client_Source}}</td>
-          <td>{{item.Customer_Rating}}</td>
+          <td ng-show="Customer_NameCheck">{{item.Customer_Name}}</td>
+          <td ng-show="Customer_AddressCheck">{{item.Customer_Address}}</td>
+          <td ng-show="MobileCheck">{{item.Mobile}}</td>
+          <td ng-show="Phone1Check">{{item.Phone1}}</td>
+          <td ng-show="Phone2Check">{{item.Phone2}}</td>
+          <td ng-show="WhatsappCheck">{{item.Whatsapp}}</td>
+          <td ng-show="EmailCheck">{{item.Email}}</td>
+          <td ng-show="Customer_CodeCheck">{{item.Customer_Code}}</td>
+          <td ng-show="NationalityCheck">{{item.Nationality}}</td>
+          <td ng-show="Resolved_ResidenceCheck">{{item.Resolved_Residence}}</td>
+          <td ng-show="DetailsCheck">{{item.Details}}</td>
+          <td ng-show="OccupationCheck">{{item.Occupation}}</td>
+          <td ng-show="Introduced_ByCheck">{{item.Introduced_By}}</td>
+          <td ng-show="Entry_DateCheck">{{item.Entry_Date}}</td>
+          <td ng-show="Last_UpdateCheck">{{item.Last_Update}}</td>
+          <td ng-show="Last_Modified_InCheck">{{item.Last_Modified_In}}</td>
+          <td ng-show="SalesmanCheck">{{item.Salesman}}</td>
+          <td ng-show="Client_SourceCheck">{{item.Client_Source}}</td>
+          <td ng-show="Customer_RatingCheck">{{item.Customer_Rating}}</td>
           <td>
             <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
             <a href="#" ng-controller="Phone_CallsController" ng-click="DeletePhoneCalls({id : item.Customer_ID});DeleteCustomer({id : item.Customer_ID});"><i class="fas fa-trash-alt"></i></a>

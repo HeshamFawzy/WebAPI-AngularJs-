@@ -71,4 +71,38 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
             } 
         }), 10000);
     }
+
+    $scope.Customer_NameCheck = true;
+    $scope.Customer_AddressCheck = true;
+    $scope.MobileCheck = true;
+    $scope.Phone1Check = true;
+    $scope.Phone2Check = true;
+    $scope.WhatsappCheck = true;
+    $scope.EmailCheck = true;
+    $scope.Customer_CodeCheck = true;
+    $scope.NationalityCheck = true;
+    $scope.Resolved_ResidenceCheck = true;
+    $scope.DetailsCheck = true;
+    $scope.OccupationCheck = true;
+    $scope.Introduced_ByCheck = true;
+    $scope.Entry_DateCheck = true;
+    $scope.Last_UpdateCheck = true;
+    $scope.Last_Modified_InCheck = true;
+    $scope.SalesmanCheck = true;
+    $scope.Client_SourceCheck = true;
+    $scope.Customer_RatingCheck = true;
+
+
+    $scope.PhoneDetailsCheck = true;
+    $scope.Call_AddressCheck = true;
+    $scope.DateCheck = true;
+    $scope.ProjectCheck = true;
+    $scope.EmployeeCheck = true;
+    $scope.Was_DoneCheck = true;
+    $scope.Call_TypeCheck = true;
+    $scope.Was_IncomeCheck = true;
+    $scope.PhoneIntroduced_ByCheck = true;
+    $scope.PhoneEntry_DateCheck = true;
+    $scope.PhoneLast_UpdateCheck = true;
+    $scope.PhoneLast_Modified_InCheck = true;
 });
