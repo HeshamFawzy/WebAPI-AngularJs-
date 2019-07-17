@@ -61,7 +61,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
     }
 
     $scope.DeleteCustomer = function(id){
-        $timeout(CustomersService.remove(id, function(response){
+        CustomersService.remove(id, function(response){
             if(response.$promise.$$state.status == 0){
                 toastr.warning("Warning");
             } else if(response.$promise.$$state.status == 1) {
@@ -69,7 +69,7 @@ angular.module('apiApp').controller('CustomerController', function($scope, $reso
             } else {
                 toastr.error("Error While Deleting Data");
             } 
-        }), 10000);
+        });
     }
 
     //Setting Menu For Customer

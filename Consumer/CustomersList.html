@@ -144,7 +144,7 @@
           <td ng-show="Customer_RatingCheck">{{item.Customer_Rating}}</td>
           <td>
             <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
-            <a href="#" ng-controller="Phone_CallsController" ng-click="DeletePhoneCalls({id : item.Customer_ID});DeleteCustomer({id : item.Customer_ID});"><i class="fas fa-trash-alt"></i></a>
+            <a href="#" ng-controller="Phone_CallsController" ng-click="DeleteCustomer({id : item.Customer_ID});"><i class="fas fa-trash-alt"></i></a>
           </td>
         </tr>
       </tbody>
