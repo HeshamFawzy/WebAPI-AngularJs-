@@ -36,25 +36,25 @@
     <table class="table table-responsive table-hover" ng-init="GetCustomers()">
       <thead class="thead-dark">
         <tr>
-          <th scope="col" ng-show="Customer_NameCheck">اسم العميل</th>
-          <th scope="col" ng-show="Customer_AddressCheck">عنوان العميل</th>
-          <th scope="col" ng-show="MobileCheck">الموبايل</th>
-          <th scope="col" ng-show="Phone1Check">تليفون 1</th>
-          <th scope="col" ng-show="Phone2Check">تليفون 2</th>
-          <th scope="col" ng-show="WhatsappCheck">واتس</th>
-          <th scope="col" ng-show="EmailCheck">الايميل</th>
-          <th scope="col" ng-show="Customer_CodeCheck">كود العميل</th>
-          <th scope="col" ng-show="NationalityCheck">الجنسيه</th>
-          <th scope="col" ng-show="Resolved_ResidenceCheck">محل الاقامه</th>
-          <th scope="col" ng-show="DetailsCheck">توصيف</th>
-          <th scope="col" ng-show="OccupationCheck">الوظيفه</th>
-          <th scope="col" ng-show="Introduced_ByCheck">ادخال بواسطه</th>
-          <th scope="col" ng-show="Entry_DateCheck">تاريخ الادخال</th>
-          <th scope="col" ng-show="Last_UpdateCheck">اخر تعديل</th>
-          <th scope="col" ng-show="Last_Modified_InCheck">اخر تعديل فى</th>
-          <th scope="col" ng-show="SalesmanCheck">رجل المبيعات</th>
-          <th scope="col" ng-show="Client_SourceCheck">مصدر العميل</th>
-          <th scope="col" ng-show="Customer_RatingCheck">تصنيف العميل</th>
+          <th scope="col" ng-if="Customer_NameCheck">اسم العميل</th>
+          <th scope="col" ng-if="Customer_AddressCheck">عنوان العميل</th>
+          <th scope="col" ng-if="MobileCheck">الموبايل</th>
+          <th scope="col" ng-if="Phone1Check">تليفون 1</th>
+          <th scope="col" ng-if="Phone2Check">تليفون 2</th>
+          <th scope="col" ng-if="WhatsappCheck">واتس</th>
+          <th scope="col" ng-if="EmailCheck">الايميل</th>
+          <th scope="col" ng-if="Customer_CodeCheck">كود العميل</th>
+          <th scope="col" ng-if="NationalityCheck">الجنسيه</th>
+          <th scope="col" ng-if="Resolved_ResidenceCheck">محل الاقامه</th>
+          <th scope="col" ng-if="DetailsCheck">توصيف</th>
+          <th scope="col" ng-if="OccupationCheck">الوظيفه</th>
+          <th scope="col" ng-if="Introduced_ByCheck">ادخال بواسطه</th>
+          <th scope="col" ng-if="Entry_DateCheck">تاريخ الادخال</th>
+          <th scope="col" ng-if="Last_UpdateCheck">اخر تعديل</th>
+          <th scope="col" ng-if="Last_Modified_InCheck">اخر تعديل فى</th>
+          <th scope="col" ng-if="SalesmanCheck">رجل المبيعات</th>
+          <th scope="col" ng-if="Client_SourceCheck">مصدر العميل</th>
+          <th scope="col" ng-if="Customer_RatingCheck">تصنيف العميل</th>
           <th scope="col">العمليات</th>
         </tr>
       </thead>
@@ -123,25 +123,25 @@
         </tr>
         <!--customers data-->
         <tr dir-paginate="item in Customers | filter:globalSearch | itemsPerPage:10">
-          <td ng-show="Customer_NameCheck">{{item.Customer_Name}}</td>
-          <td ng-show="Customer_AddressCheck">{{item.Customer_Address}}</td>
-          <td ng-show="MobileCheck">{{item.Mobile}}</td>
-          <td ng-show="Phone1Check">{{item.Phone1}}</td>
-          <td ng-show="Phone2Check">{{item.Phone2}}</td>
-          <td ng-show="WhatsappCheck">{{item.Whatsapp}}</td>
-          <td ng-show="EmailCheck">{{item.Email}}</td>
-          <td ng-show="Customer_CodeCheck">{{item.Customer_Code}}</td>
-          <td ng-show="NationalityCheck">{{item.Nationality}}</td>
-          <td ng-show="Resolved_ResidenceCheck">{{item.Resolved_Residence}}</td>
-          <td ng-show="DetailsCheck">{{item.Details}}</td>
-          <td ng-show="OccupationCheck">{{item.Occupation}}</td>
-          <td ng-show="Introduced_ByCheck">{{item.Introduced_By}}</td>
-          <td ng-show="Entry_DateCheck">{{item.Entry_Date}}</td>
-          <td ng-show="Last_UpdateCheck">{{item.Last_Update}}</td>
-          <td ng-show="Last_Modified_InCheck">{{item.Last_Modified_In}}</td>
-          <td ng-show="SalesmanCheck">{{item.Salesman}}</td>
-          <td ng-show="Client_SourceCheck">{{item.Client_Source}}</td>
-          <td ng-show="Customer_RatingCheck">{{item.Customer_Rating}}</td>
+          <td ng-if="Customer_NameCheck">{{item.Customer_Name}}</td>
+          <td ng-if="Customer_AddressCheck">{{item.Customer_Address}}</td>
+          <td ng-if="MobileCheck">{{item.Mobile}}</td>
+          <td ng-if="Phone1Check">{{item.Phone1}}</td>
+          <td ng-if="Phone2Check">{{item.Phone2}}</td>
+          <td ng-if="WhatsappCheck">{{item.Whatsapp}}</td>
+          <td ng-if="EmailCheck">{{item.Email}}</td>
+          <td ng-if="Customer_CodeCheck">{{item.Customer_Code}}</td>
+          <td ng-if="NationalityCheck">{{item.Nationality}}</td>
+          <td ng-if="Resolved_ResidenceCheck">{{item.Resolved_Residence}}</td>
+          <td ng-if="DetailsCheck">{{item.Details}}</td>
+          <td ng-if="OccupationCheck">{{item.Occupation}}</td>
+          <td ng-if="Introduced_ByCheck">{{item.Introduced_By}}</td>
+          <td ng-if="Entry_DateCheck">{{item.Entry_Date}}</td>
+          <td ng-if="Last_UpdateCheck">{{item.Last_Update}}</td>
+          <td ng-if="Last_Modified_InCheck">{{item.Last_Modified_In}}</td>
+          <td ng-if="SalesmanCheck">{{item.Salesman}}</td>
+          <td ng-if="Client_SourceCheck">{{item.Client_Source}}</td>
+          <td ng-if="Customer_RatingCheck">{{item.Customer_Rating}}</td>
           <td>
             <a href="#" ui-sref="EditCustomer({id : item.Customer_ID})"><i class="fas fa-edit"></i></a>
             <a href="#" ng-controller="Phone_CallsController" ng-click="DeleteCustomer({id : item.Customer_ID});"><i class="fas fa-trash-alt"></i></a>

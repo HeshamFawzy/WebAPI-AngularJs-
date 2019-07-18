@@ -124,18 +124,18 @@
             <table class="table table-responsive">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col" ng-show="PhoneDetailsCheck">التوصيف</th>
-                        <th scope="col" ng-show="Call_AddressCheck">عنوان المكالمه</th>
-                        <th scope="col" ng-show="DateCheck">التاريخ</th>
-                        <th scope="col" ng-show="ProjectCheck">المشروع</th>
-                        <th scope="col" ng-show="EmployeeCheck">الموظف</th>
-                        <th scope="col" ng-show="Was_DoneCheck">هل تمت</th>
-                        <th scope="col" ng-show="Call_TypeCheck">نوع المكالمه</th>
-                        <th scope="col" ng-show="Was_IncomeCheck">هل وارد</th>
-                        <th scope="col" ng-show="PhoneIntroduced_ByCheck">ادخال بواسطه</th>
-                        <th scope="col" ng-show="PhoneEntry_DateCheck">تاريخ الادخال</th>
-                        <th scope="col" ng-show="PhoneLast_UpdateCheck">اخر تعديل</th>
-                        <th scope="col" ng-show="PhoneLast_Modified_InCheck">اخر تعديل فى</th>
+                        <th scope="col" ng-if="PhoneDetailsCheck">التوصيف</th>
+                        <th scope="col" ng-if="Call_AddressCheck">عنوان المكالمه</th>
+                        <th scope="col" ng-if="DateCheck">التاريخ</th>
+                        <th scope="col" ng-if="ProjectCheck">المشروع</th>
+                        <th scope="col" ng-if="EmployeeCheck">الموظف</th>
+                        <th scope="col" ng-if="Was_DoneCheck">هل تمت</th>
+                        <th scope="col" ng-if="Call_TypeCheck">نوع المكالمه</th>
+                        <th scope="col" ng-if="Was_IncomeCheck">هل وارد</th>
+                        <th scope="col" ng-if="PhoneIntroduced_ByCheck">ادخال بواسطه</th>
+                        <th scope="col" ng-if="PhoneEntry_DateCheck">تاريخ الادخال</th>
+                        <th scope="col" ng-if="PhoneLast_UpdateCheck">اخر تعديل</th>
+                        <th scope="col" ng-if="PhoneLast_Modified_InCheck">اخر تعديل فى</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -182,24 +182,24 @@
                     </tr>
                     <!--phonecalls data-->
                     <tr dir-paginate="item in PhoneCalls | filter:globalSearch | itemsPerPage:10">
-                        <td ng-show="PhoneDetailsCheck">{{item.Details}}</td>
-                        <td ng-show="Call_AddressCheck">{{item.Call_Address}}</td>
-                        <td ng-show="DateCheck">{{item.Date}}</td>
-                        <td ng-show="ProjectCheck">{{item.Project}}</td>
-                        <td ng-show="EmployeeCheck">{{item.Employee}}</td>
-                        <td ng-show="Was_DoneCheck">
+                        <td ng-if="PhoneDetailsCheck">{{item.Details}}</td>
+                        <td ng-if="Call_AddressCheck">{{item.Call_Address}}</td>
+                        <td ng-if="DateCheck">{{item.Date}}</td>
+                        <td ng-if="ProjectCheck">{{item.Project}}</td>
+                        <td ng-if="EmployeeCheck">{{item.Employee}}</td>
+                        <td ng-if="Was_DoneCheck">
                             <i ng-if="item.Was_Done == true" class="fas fa-check-circle"></i>
                             <i ng-if="item.Was_Done == false" class="fas fa-times-circle"></i>
                         </td>
-                        <td ng-show="Call_TypeCheck">{{item.Call_Type}}</td>
-                        <td ng-show="Was_IncomeCheck">
+                        <td ng-if="Call_TypeCheck">{{item.Call_Type}}</td>
+                        <td ng-if="Was_IncomeCheck">
                             <i ng-if="item.Was_Income == true" class="fas fa-check-circle"></i>
                             <i ng-if="item.Was_Income == false" class="fas fa-times-circle"></i>
                         </td>
-                        <td ng-show="PhoneIntroduced_ByCheck">{{item.Introduced_By}}</td>
-                        <td ng-show="PhoneEntry_DateCheck">{{item.Entry_Date}}</td>
-                        <td ng-show="PhoneLast_UpdateCheck">{{item.Last_Update}}</td>
-                        <td ng-show="PhoneLast_Modified_InCheck">{{item.Last_Modified_In}}</td>
+                        <td ng-if="PhoneIntroduced_ByCheck">{{item.Introduced_By}}</td>
+                        <td ng-if="PhoneEntry_DateCheck">{{item.Entry_Date}}</td>
+                        <td ng-if="PhoneLast_UpdateCheck">{{item.Last_Update}}</td>
+                        <td ng-if="PhoneLast_Modified_InCheck">{{item.Last_Modified_In}}</td>
                     </tr>
                 </tbody>
             </table>
